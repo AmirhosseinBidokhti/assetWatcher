@@ -1,0 +1,48 @@
+و اینکه تغییرات رو چطوری میگی؟ اینا رو میبینی:
+--------------------------------------
+
+- برنامه تا دیروز پول نمیداده بابت این دامین، الان میده 
+  BC ✅
+  H1
+  IN
+  HP
+  YW
+  
+- برنامه یه دامین رو * دار کرده، نبوده 
+
+// MAIN
+- برنامه یه دامین رو اضافه کرده 
+  BC ✅ Just small adjucment
+
+
+- یه برنامه کلا به هکروان اضافه شده 
+  BC ✅
+
+- یه برنامه disable بوده الان enable شده (❓)
+
+- notif e discord ✅
+
+
+# TODO
+Creating custom messaging format for discord
+
+1) A new program named A is on PLATFORM. Here is the SCOPES 
+2) Program max payout has change from A to B
+3) New Asset for program A. LIST_OF_ASSET
+4) Program A status changed from disalbe to enable on PLATFORM. 
+
+
+MSG_TYPE (newAsset, payment, newProgram, enabled)
+
+
+PLATFORM
+NAME
+SCOPES (Asset(s))
+max_payout FROM TO
+
+
+
+
+
+
+
