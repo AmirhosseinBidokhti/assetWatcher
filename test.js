@@ -20,3 +20,40 @@ const results = arrayOne.filter(
 );
 
 console.log(results);
+
+//MSG_TYPE (newAsset, payment, newProgram, enabled)
+
+const msgFormatter = (msg) => {
+  const { msgType, program, platform, assets, others } = msg;
+
+  let finalMessage = "";
+
+  switch (msgType) {
+    case "newAsset":
+      finalMessage += `New Assets for ${program} on ${platform}!`;
+
+      assets.map(({ target }) => {
+        finalMessage += `\n${target}`;
+      });
+      return finalMessage;
+
+    case "newProgram":
+      finalMessage += `New Program called ${program} is on ${platform}!\nAssets:`;
+
+      assets.map(({ target }) => {
+        finalMessage += `\n${target}`;
+      });
+      return finalMessage;
+
+    case "payment":
+      finalMessage += `Program ${program} payout changed from $${others[1]} to $${others[0]}\nAssets:`;
+
+      assets.map(({ target }) => {
+        finalMessage += `\n${target}`;
+      });
+      return finalMessage;
+
+    default:
+      break;
+  }
+};

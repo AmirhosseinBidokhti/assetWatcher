@@ -1,8 +1,8 @@
-import { API } from "./API/index.js";
-import { msgFormatter, readData, sendToDiscord } from "./utils.js";
+import { API } from "../api-fetcher/index.js";
+import { readData, sendToDiscord } from "../utils.js";
 
 const watchForBugCrowd = async () => {
-  const db = readData("./db/BUGCROWD.json");
+  const db = readData("../db/BUGCROWD.json");
 
   let bcPrograms = await API("bugcrowd");
 

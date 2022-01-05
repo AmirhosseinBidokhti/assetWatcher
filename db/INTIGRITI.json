@@ -49,7 +49,7 @@
       "currency": "EUR"
     },
     "max_bounty": {
-      "value": 2000.0,
+      "value": 0.0,
       "currency": "EUR"
     },
     "targets": {
@@ -77,11 +77,6 @@
         {
           "type": "url",
           "endpoint": "www.ad.nl",
-          "description": null
-        },
-        {
-          "type": "url",
-          "endpoint": "www.ad.nl/abonnementen",
           "description": null
         }
       ],
@@ -174,7 +169,18 @@
       "currency": "EUR"
     },
     "targets": {
-      "in_scope": [],
+      "in_scope": [
+        {
+          "type": "url",
+          "endpoint": "www.brusselsairlines.com",
+          "description": null
+        },
+        {
+          "type": "url",
+          "endpoint": "crew4crew.be",
+          "description": null
+        }
+      ],
       "out_of_scope": []
     }
   },
@@ -195,13 +201,7 @@
       "currency": "EUR"
     },
     "targets": {
-      "in_scope": [
-        {
-          "type": "url",
-          "endpoint": "www.cybersecuritycoalition.be",
-          "description": "Public website"
-        }
-      ],
+      "in_scope": [],
       "out_of_scope": []
     }
   },
@@ -364,7 +364,7 @@
       "currency": "EUR"
     },
     "max_bounty": {
-      "value": 15000.0,
+      "value": 0.0,
       "currency": "EUR"
     },
     "targets": {
@@ -382,21 +382,6 @@
         {
           "type": "url",
           "endpoint": "app.delen.be ",
-          "description": null
-        },
-        {
-          "type": "url",
-          "endpoint": "app.delen.ch ",
-          "description": null
-        },
-        {
-          "type": "url",
-          "endpoint": "app.delen.lu ",
-          "description": null
-        },
-        {
-          "type": "url",
-          "endpoint": "auth.digital.delen.be ",
           "description": null
         },
         {

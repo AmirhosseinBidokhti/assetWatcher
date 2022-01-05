@@ -1,5 +1,5 @@
-import { API } from "./API/index.js";
-import { readData, sendToDiscord } from "./utils.js";
+import { API } from "../api-fetcher/index.js";
+import { readData, sendToDiscord } from "../utils.js";
 
 export const watchForIntigriti = async () => {
   const db = readData("./db/INTIGRITI.json");
@@ -51,7 +51,7 @@ export const watchForIntigriti = async () => {
     if (newDomains.length) {
       let msg = `New Assets for \"${name}\" on Intigriti!`;
 
-      assets.map(({ endpoint }) => {
+      newDomains.map(({ endpoint }) => {
         msg += `\n${endpoint}`;
       });
 
@@ -59,5 +59,3 @@ export const watchForIntigriti = async () => {
     }
   }
 };
-
-watchForIntigriti();

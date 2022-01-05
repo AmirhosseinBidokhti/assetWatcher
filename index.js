@@ -1,11 +1,17 @@
-import path from "path";
-import { API } from "./API/index.js";
-
-//import pkg from "deep-diff";
 import { initWatcher } from "./init.js";
-// const { diff } = pkg;
-// const __dirname = path.resolve();
+import { sendToDiscord } from "./utils.js";
+import { watchForHackerone } from "./watchers/hackerone.js";
+import { watchForIntigriti } from "./watchers/intigriti.js";
+import { watchForYeswehack } from "./watchers/yeswehack.js";
 
 const arg = process.argv.slice(2);
 
+const main = () => {
+  watchForIntigriti();
+  watchForYeswehack();
+  watchForHackerone();
+};
+
 if (arg[0] === "init") initWatcher();
+
+if (arg[0] === "watch") main();

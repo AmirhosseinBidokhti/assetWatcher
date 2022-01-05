@@ -1,5 +1,5 @@
-import { API } from "./API/index.js";
-import { readData, sendToDiscord } from "./utils.js";
+import { API } from "../api-fetcher/index.js";
+import { readData, sendToDiscord } from "../utils.js";
 
 export const watchForYeswehack = async () => {
   const db = readData("./db/YESWEHACK.json");
@@ -46,7 +46,7 @@ export const watchForYeswehack = async () => {
     if (newDomains.length) {
       let msg = `New Assets for \"${name}\" on Yeswehack!`;
 
-      assets.map(({ target }) => {
+      newDomains.map(({ target }) => {
         msg += `\n${target}`;
       });
 
@@ -55,4 +55,4 @@ export const watchForYeswehack = async () => {
   }
 };
 
-watchForYeswehack();
+//watchForYeswehack();

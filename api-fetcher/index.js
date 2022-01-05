@@ -1,13 +1,22 @@
 import got from "got";
 import { BUG_BOUNTY_PLATFORMS } from "../constants.js";
 
+const retry = {
+  retry: {
+    limit: 3,
+    errorCodes: ["ETIMEDOUT", "ECONNREFUSED", "ENETUNREACH"],
+    calculateDelay: ({ computedValue }) => {
+      return computedValue / 10;
+    },
+  },
+};
+
 export const API = async (bugBountyPlatform) => {
   switch (bugBountyPlatform) {
     case "hackerone":
       try {
         console.log("Fetching the data of hackerone...");
-        const response = await got(BUG_BOUNTY_PLATFORMS.HACKERONE);
-
+        const response = await got(BUG_BOUNTY_PLATFORMS.HACKERONE, retry);
         return response.body;
       } catch (error) {
         console.error(`Error while fetching program: ${error}`);
@@ -16,8 +25,7 @@ export const API = async (bugBountyPlatform) => {
     case "bugcrowd":
       try {
         console.log("Fetching the data of bugcrowd...");
-        const response = await got(BUG_BOUNTY_PLATFORMS.BUGCROWD);
-
+        const response = await got(BUG_BOUNTY_PLATFORMS.BUGCROWD, retry);
         return response.body;
       } catch (error) {
         console.error(`Error while fetching program: ${error}`);
@@ -26,8 +34,7 @@ export const API = async (bugBountyPlatform) => {
     case "intigriti":
       try {
         console.log("Fetching the data of intigriti...");
-        const response = await got(BUG_BOUNTY_PLATFORMS.INTIGRITI);
-
+        const response = await got(BUG_BOUNTY_PLATFORMS.INTIGRITI, retry);
         return response.body;
       } catch (error) {
         console.error(`Error while fetching program: ${error}`);
@@ -36,8 +43,7 @@ export const API = async (bugBountyPlatform) => {
     case "hackenproof":
       try {
         console.log("Fetching the data of hackenproof...");
-        const response = await got(BUG_BOUNTY_PLATFORMS.HACKENPROOF);
-
+        const response = await got(BUG_BOUNTY_PLATFORMS.HACKENPROOF, retry);
         return response.body;
       } catch (error) {
         console.error(`Error while fetching program: ${error}`);
@@ -46,8 +52,7 @@ export const API = async (bugBountyPlatform) => {
     case "yeswehack":
       try {
         console.log("Fetching the data of yeswehack...");
-        const response = await got(BUG_BOUNTY_PLATFORMS.YESWEHACK);
-
+        const response = await got(BUG_BOUNTY_PLATFORMS.YESWEHACK, retry);
         return response.body;
       } catch (error) {
         console.error(`Error while fetching program: ${error}`);
@@ -56,7 +61,7 @@ export const API = async (bugBountyPlatform) => {
     case "federacy":
       try {
         console.log("Fetching the data of federacy...");
-        const response = await got(BUG_BOUNTY_PLATFORMS.FEDERACY);
+        const response = await got(BUG_BOUNTY_PLATFORMS.FEDERACY, retry);
 
         return response.body;
       } catch (error) {

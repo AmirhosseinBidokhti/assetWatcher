@@ -6,7 +6,7 @@
     "disabled": false,
     "managed": false,
     "min_bounty": 50,
-    "max_bounty": 5000,
+    "max_bounty": 0,
     "targets": {
       "in_scope": [
         {
@@ -15,18 +15,6 @@
         },
         {
           "target": "https://fcu.eu-west-2.outscale.com",
-          "type": "api"
-        },
-        {
-          "target": "https://lbu.eu-west-2.outscale.com",
-          "type": "api"
-        },
-        {
-          "target": "https://osu.eu-west-2.outscale.com",
-          "type": "api"
-        },
-        {
-          "target": "https://eim.eu-west-2.outscale.com",
           "type": "api"
         },
         {
@@ -121,26 +109,6 @@
         },
         {
           "target": "https://www.blablacar.ro",
-          "type": "web-application"
-        },
-        {
-          "target": "https://www.blablacar.ru",
-          "type": "web-application"
-        },
-        {
-          "target": "https://www.sk.blablacar.com",
-          "type": "web-application"
-        },
-        {
-          "target": "https://www.rs.blablacar.gg",
-          "type": "web-application"
-        },
-        {
-          "target": "https://www.blablacar.com.tr",
-          "type": "web-application"
-        },
-        {
-          "target": "https://www.blablacar.com.ua",
           "type": "web-application"
         },
         {

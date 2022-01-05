@@ -1,5 +1,5 @@
 import fs from "fs";
-import { API } from "./API/index.js";
+import { API } from "./api-fetcher/index.js";
 import { BUG_BOUNTY_PLATFORMS } from "./constants.js";
 import { readData } from "./utils.js";
 

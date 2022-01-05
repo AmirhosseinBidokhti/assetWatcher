@@ -13,5 +13,6 @@ const BUG_BOUNTY_PLATFORMS = {
     "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/federacy_data.json",
 };
 
-const DISCORD_WEBHOOK = "";
+const DISCORD_WEBHOOK = "redacted";
+
 export { BUG_BOUNTY_PLATFORMS, DISCORD_WEBHOOK };
