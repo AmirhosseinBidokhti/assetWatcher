@@ -68,13 +68,13 @@ export const watchForBugCrowd = () => {
           )
       );
       newAssets.push(...results);
-      console.log(newAssets);
 
       if (newAssets.length) {
         let msg = `New Assets for \"${name}\" on Bugcrowd!`;
 
         newAssets.map(({ target }) => {
           msg += `\n${target}`;
+          console.log(`New Asset : ${target}`);
         });
 
         const status = await sendToDiscord(msg);
@@ -84,7 +84,8 @@ export const watchForBugCrowd = () => {
           saveData(dbPath, db);
           console.log(`Just added new assets for ${name} to the database`);
         }
-
+      } else {
+        console.log(`Nothing new for ${name}`);
       }
     }
     reoslve();

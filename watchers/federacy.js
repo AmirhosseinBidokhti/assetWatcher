@@ -49,13 +49,13 @@ export const watchForFederacy = () => {
           )
       );
       newAssets.push(...results);
-      console.log(newAssets);
-
+    
       if (newAssets.length) {
         let msg = `New Assets for \"${name}\" on Fededracy!`;
 
         newAssets.map(({ target }) => {
           msg += `\n${target}`;
+          console.log(`New Asset : ${target}`);
         });
 
         const status = await sendToDiscord(msg);
@@ -65,7 +65,8 @@ export const watchForFederacy = () => {
           saveData(dbPath, db);
           console.log(`Just added new assets for ${name} to the database`);
         }
-
+      } else {
+        console.log(`Nothing new for ${name}`);
       }
     }
     reoslve();

@@ -1,0 +1,5 @@
+hackerone
+bugcrowd
+hackenproof
+intigriti
+yeswehack

@@ -1,5 +1,4 @@
 import fs from "fs";
-import path from "path";
 import { API } from "./api-fetcher/index.js";
 import { BUG_BOUNTY_PLATFORMS } from "./helper/constants.js";
 import { readData } from "./helper/utils.js";
@@ -9,21 +8,16 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-console.log(__dirname);
-
 const PLATFORMS = Object.keys(BUG_BOUNTY_PLATFORMS);
 
 const createDatabase = () => {
   return new Promise((resolve, reject) => {
     PLATFORMS.map((platform) => {
       try {
-
-        
         const filePath = `${__dirname}/db/${platform}.json`
 
-
         if (fs.existsSync(filePath)) {
-          //file exists
+          //file exists, no need to add new one
           console.log(`JSON file for ${platform} already exists!`);
         } else {
           fs.appendFile(filePath, "", function (err) {
@@ -35,7 +29,6 @@ const createDatabase = () => {
         console.log(err);
       }
     });
-
     resolve();
   });
 };
@@ -43,9 +36,9 @@ const createDatabase = () => {
 const seeder = () => {
   return new Promise((resolve, reject) => {
     PLATFORMS.map(async (platform) => {
-      
       const filePath = `${__dirname}/db/${platform}.json`
       const data = readData(filePath);
+
       if (data === "empty") {
         const resp = await API(platform.toLowerCase());
 
@@ -55,8 +48,8 @@ const seeder = () => {
               `An error occured while seeding JSON Object to ${platform} File.`
             );
           }
-          console.log(`Seeding for ${platform} was done successfully!`);
         });
+	console.log(`Seeding for ${platform} was done successfully!`);
       }
     });
 
@@ -72,7 +65,5 @@ const initWatcher = async () => {
     console.log(error);
   }
 };
-
-initWatcher();
 
 export { initWatcher };

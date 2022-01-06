@@ -41,6 +41,7 @@ const sendToDiscord = (msg) => {
             json: { content: chunk },
           });
         });
+        resolve("success");
       } else {
         const { data } = await got.post(DISCORD_WEBHOOK, {
           json: { content: msg },
@@ -56,5 +57,3 @@ const sendToDiscord = (msg) => {
 
 export { saveData, readData, sendToDiscord };
 
-//const PRODUCT_PATH = `${__dirname}/server/data/products.json`;
-//https://www.digitalocean.com/community/tutorials/nodejs-how-to-use__dirname

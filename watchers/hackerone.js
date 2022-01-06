@@ -62,13 +62,13 @@ export const watchForHackerone = () => {
           )
       );
       newAssets.push(...results);
-      console.log(newAssets);
-
+    
       if (newAssets.length) {
         let msg = `New Assets for \"${name}\" on Hackerone!`;
 
         newAssets.map(({ asset_identifier }) => {
           msg += `\n${asset_identifier}`;
+          console.log(`New assets: ${asset_identifier}`);
         });
 
         const status = await sendToDiscord(msg);
@@ -80,7 +80,7 @@ export const watchForHackerone = () => {
           console.log(`Just added new assets for ${name} to the database`);
         }
       } else {
-        continue;
+        console.log(`Nothing new for ${name}`);
       }
     }
     resolve();

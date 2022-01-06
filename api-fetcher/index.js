@@ -1,6 +1,7 @@
 import got from "got";
 import { BUG_BOUNTY_PLATFORMS } from "../helper/constants.js";
 
+// got retry option in time of network failures/errors
 const retry = {
   retry: {
     limit: 3,

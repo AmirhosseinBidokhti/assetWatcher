@@ -70,13 +70,13 @@ export const watchForIntigriti = () => {
           )
       );
       newAssets.push(...results);
-      console.log(newAssets);
 
       if (newAssets.length) {
         let msg = `New Assets for \"${name}\" on Intigriti!`;
 
         newAssets.map(({ endpoint }) => {
           msg += `\n${endpoint}`;
+          console.log(`New assets: ${endpoint}`);
         });
 
         const status = await sendToDiscord(msg);
@@ -86,7 +86,8 @@ export const watchForIntigriti = () => {
           saveData(dbPath, db);
           console.log(`Just added new assets for ${name} to the database`);
         }
-
+      } else {
+        console.log(`Nothing new for ${name}`);
       }
     }
     reoslve();
