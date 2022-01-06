@@ -1,22 +1,35 @@
 import fs from "fs";
-import { API } from "../api-fetcher/index.js";
-import { BUG_BOUNTY_PLATFORMS } from "./constants.js";
-import { readData } from "./utils.js";
+import path from "path";
+import { API } from "./api-fetcher/index.js";
+import { BUG_BOUNTY_PLATFORMS } from "./helper/constants.js";
+import { readData } from "./helper/utils.js";
+
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+console.log(__dirname);
 
 const PLATFORMS = Object.keys(BUG_BOUNTY_PLATFORMS);
 
 const createDatabase = () => {
   return new Promise((resolve, reject) => {
-    PLATFORMS.map((platfrom) => {
+    PLATFORMS.map((platform) => {
       try {
-        if (fs.existsSync(`../db/${platfrom}.json`)) {
+
+        
+        const filePath = `${__dirname}/db/${platform}.json`
+
+
+        if (fs.existsSync(filePath)) {
           //file exists
-          console.log(`JSON file for ${platfrom} already exists!`);
+          console.log(`JSON file for ${platform} already exists!`);
         } else {
-          fs.appendFile(`../db/${platfrom}.jso`, "", function (err) {
+          fs.appendFile(filePath, "", function (err) {
             if (err) throw err;
           });
-          console.log(`JSON file for ${platfrom} was created successfully!`);
+          console.log(`JSON file for ${platform} was created successfully!`);
         }
       } catch (err) {
         console.log(err);
@@ -30,11 +43,13 @@ const createDatabase = () => {
 const seeder = () => {
   return new Promise((resolve, reject) => {
     PLATFORMS.map(async (platform) => {
-      const data = readData(`../db/${platform}.json`);
+      
+      const filePath = `${__dirname}/db/${platform}.json`
+      const data = readData(filePath);
       if (data === "empty") {
         const resp = await API(platform.toLowerCase());
 
-        fs.writeFile(`../db/${platform}.json`, resp, function (err) {
+        fs.writeFile(filePath, resp, function (err) {
           if (err) {
             console.log(
               `An error occured while seeding JSON Object to ${platform} File.`
@@ -58,6 +73,6 @@ const initWatcher = async () => {
   }
 };
 
-//initWatcher();
+initWatcher();
 
 export { initWatcher };

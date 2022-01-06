@@ -1,9 +1,12 @@
 import { API } from "../api-fetcher/index.js";
 import { readData, saveData, sendToDiscord } from "../helper/utils.js";
-import path from "path";
-const __dirname = path.resolve();
 
-const dbPath = `${__dirname}/db/FEDERACY.json`;
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+const dbPath = `${__dirname}/../db/FEDERACY.json`;
 
 export const watchForFederacy = () => {
   return new Promise(async (reoslve, reject) => {

@@ -1,5 +1,2 @@
 # dependencies
-/db/**
 /node_modules
-!/db/**/
-!/db/**/.gitkeep
