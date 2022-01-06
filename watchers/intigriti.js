@@ -1,61 +1,89 @@
 import { API } from "../api-fetcher/index.js";
-import { readData, sendToDiscord } from "../utils.js";
+import { readData, saveData, sendToDiscord } from "../utils.js";
+import path from "path";
+const __dirname = path.resolve();
 
-export const watchForIntigriti = async () => {
-  const db = readData("./db/INTIGRITI.json");
+const dbPath = `${__dirname}/db/INTIGRITI.json`;
 
-  let programs = await API("intigriti");
+export const watchForIntigriti = () => {
+  return new Promise(async (reoslve, reject) => {
+    const db = readData(dbPath);
 
-  programs = JSON.parse(programs);
+    let programs = await API("intigriti");
 
-  for (const program of programs) {
-    const name = program.name;
-    const assets = program.targets.in_scope;
-    let newDomains = [];
+    programs = JSON.parse(programs);
 
-    const matchingProgram = db.find(
-      (dbProgram) => dbProgram.url === program.url
-    );
-    //یه برنامه کلا به هکروان اضافه شده
-    if (!matchingProgram) {
-      let msg = `New Program called \"${name}\" is on Intigriti!\nAssets:`;
-      assets.map(({ endpoint }) => {
-        msg += `\n${endpoint}`;
-      });
-      sendToDiscord(msg);
-      continue;
+    for (const program of programs) {
+      const name = program.name;
+      const assets = program.targets.in_scope;
+      let newAssets = [];
+
+      const matchingProgram = db.find(
+        (dbProgram) => dbProgram.url === program.url
+      );
+      //یه برنامه کلا به اینتگ اضافه شده
+      if (!matchingProgram) {
+        let msg = `New Program called \"${name}\" is on Intigriti!\nAssets:`;
+        assets.map(({ endpoint }) => {
+          msg += `\n${endpoint}`;
+        });
+
+        const status = await sendToDiscord(msg);
+
+        if (status == "success") {
+          db.push(program);
+          saveData(dbPath, db);
+          console.log(`Just added ${name} Program to the database`);
+        }
+
+        continue;
+      }
+      // برنامه تا دیروز پول نمیداده بابت این دامین، الان میده
+      if (
+        program.max_bounty.value > 0 &&
+        matchingProgram.max_bounty.value === 0
+      ) {
+        let msg = `Program ${name} payout changed to $${program.max_bounty.value}!\nAssets:`;
+
+        assets.map(({ endpoint }) => {
+          msg += `\n${endpoint}`;
+        });
+
+        const status = await sendToDiscord(msg);
+
+        if (status == "success") {
+          matchingProgram.max_bounty.value = program.max_bounty.value;
+          saveData(dbPath, db);
+        }
+
+      }
+      // برنامه یه دامین رو اضافه کرده
+      const results = assets.filter(
+        ({ endpoint: urlapi }) =>
+          !matchingProgram.targets.in_scope.find(
+            ({ endpoint: urldb }) => urlapi === urldb
+          )
+      );
+      newAssets.push(...results);
+      console.log(newAssets);
+
+      if (newAssets.length) {
+        let msg = `New Assets for \"${name}\" on Intigriti!`;
+
+        newAssets.map(({ endpoint }) => {
+          msg += `\n${endpoint}`;
+        });
+
+        const status = await sendToDiscord(msg);
+        if (status == "success") {
+          matchingProgram.targets.in_scope.push(...newAssets);
+
+          saveData(dbPath, db);
+          console.log(`Just added new assets for ${name} to the database`);
+        }
+
+      }
     }
-    // برنامه تا دیروز پول نمیداده بابت این دامین، الان میده
-    if (
-      program.max_bounty.value > 0 &&
-      matchingProgram.max_bounty.value === 0
-    ) {
-      let msg = `Program ${name} payout changed to $${program.max_bounty.value}!\nAssets:`;
-
-      assets.map(({ endpoint }) => {
-        msg += `\n${endpoint}`;
-      });
-
-      sendToDiscord(msg);
-    }
-    // برنامه یه دامین رو اضافه کرده
-    const results = assets.filter(
-      ({ endpoint: urlapi }) =>
-        !matchingProgram.targets.in_scope.find(
-          ({ endpoint: urldb }) => urlapi === urldb
-        )
-    );
-    newDomains.push(...results);
-    console.log(newDomains);
-
-    if (newDomains.length) {
-      let msg = `New Assets for \"${name}\" on Intigriti!`;
-
-      newDomains.map(({ endpoint }) => {
-        msg += `\n${endpoint}`;
-      });
-
-      sendToDiscord(msg);
-    }
-  }
+    reoslve();
+  });
 };

@@ -45,7 +45,8 @@ const sendToDiscord = (msg) => {
         const { data } = await got.post(DISCORD_WEBHOOK, {
           json: { content: msg },
         });
-        resolve("Successfully sent to discord!");
+        console.log("Successfully sent to discord!");
+        resolve("success");
       }
     } catch (error) {
       console.error(`Error while sending to discord channel: ${error}`);

@@ -3,13 +3,13 @@ import { readData, saveData, sendToDiscord } from "../utils.js";
 import path from "path";
 const __dirname = path.resolve();
 
-const dbPath = `${__dirname}/db/YESWEHACK.json`;
+const dbPath = `${__dirname}/db/FEDERACY.json`;
 
-export const watchForYeswehack = () => {
+export const watchForFederacy = () => {
   return new Promise(async (reoslve, reject) => {
     const db = readData(dbPath);
 
-    let programs = await API("yeswehack");
+    let programs = await API("federacy");
 
     programs = JSON.parse(programs);
 
@@ -19,11 +19,11 @@ export const watchForYeswehack = () => {
       let newAssets = [];
 
       const matchingProgram = db.find(
-        (dbProgram) => dbProgram.name === name
+        (dbProgram) => dbProgram.url === program.url
       );
-      //یه برنامه کلا به یس وی اضافه شده
+      //یه برنامه کلا به اینتگ اضافه شده
       if (!matchingProgram) {
-        let msg = `New Program called \"${name}\" is on Yeswehack!\nAssets:`;
+        let msg = `New Program called \"${name}\" is on Fededracy!\nAssets:`;
         assets.map(({ target }) => {
           msg += `\n${target}`;
         });
@@ -38,25 +38,6 @@ export const watchForYeswehack = () => {
 
         continue;
       }
-      // برنامه تا دیروز پول نمیداده بابت این دامین، الان میده
-      if (
-        program.max_bounty > 0 &&
-        matchingProgram.max_bounty === 0
-      ) {
-        let msg = `Program ${name} payout changed to $${program.max_bounty}!\nAssets:`;
-
-        assets.map(({ target }) => {
-          msg += `\n${target}`;
-        });
-
-        const status = await sendToDiscord(msg);
-
-        if (status == "success") {
-          matchingProgram.max_bounty = program.max_bounty;
-          saveData(dbPath, db);
-        }
-
-      }
       // برنامه یه دامین رو اضافه کرده
       const results = assets.filter(
         ({ target: urlapi }) =>
@@ -68,7 +49,7 @@ export const watchForYeswehack = () => {
       console.log(newAssets);
 
       if (newAssets.length) {
-        let msg = `New Assets for \"${name}\" on Yeswehack!`;
+        let msg = `New Assets for \"${name}\" on Fededracy!`;
 
         newAssets.map(({ target }) => {
           msg += `\n${target}`;

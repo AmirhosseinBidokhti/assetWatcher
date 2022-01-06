@@ -1,3 +1,33 @@
+# IMPORATANT TO DO
+
+- Only update my database when the discord notification was sent successfully.
+
+- There situations like rate limiting when the messages are a lot.
+
+- Since there are 3-4 platforms, this can cause problems.
+
+- We can not just write new data to db after one cron job was done.
+
+- This is risky since might add stuffs to our db that we were never get notified of.
+
+  done ✅
+
+
+watchers
+  hackerone ✅ (first check) 
+  intigriti ✅ 
+  bugcrowd✅ 
+  yeswehack✅ 
+  others✅ 
+  
+
+
+
+
+
+
+
+
 و اینکه تغییرات رو چطوری میگی؟ اینا رو میبینی:
 --------------------------------------
 
@@ -39,8 +69,6 @@ PLATFORM
 NAME
 SCOPES (Asset(s))
 max_payout FROM TO
-
-
 
 
 
