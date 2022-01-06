@@ -3,6 +3,8 @@ A tool to notify you of the latest changes in bug bounty programs.
 
 It uses https://github.com/arkadiyt/bounty-targets-data API.
 
+New Assets -> Less Hunted -> Instant Notfication -> More Chance of Hunting
+
 ## Features
 - Get notified of newly launched programs on platforms.
 - Get notified of new assets added to programs.
