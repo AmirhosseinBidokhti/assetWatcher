@@ -1,5 +1,5 @@
 import fs from "fs";
-import { API } from "./api-fetcher/index.js";
+import { API } from "../api-fetcher/index.js";
 import { BUG_BOUNTY_PLATFORMS } from "./constants.js";
 import { readData } from "./utils.js";
 
@@ -9,11 +9,11 @@ const createDatabase = () => {
   return new Promise((resolve, reject) => {
     PLATFORMS.map((platfrom) => {
       try {
-        if (fs.existsSync(`./db/${platfrom}.json`)) {
+        if (fs.existsSync(`../db/${platfrom}.json`)) {
           //file exists
           console.log(`JSON file for ${platfrom} already exists!`);
         } else {
-          fs.appendFile(`./db/${platfrom}.json`, "", function (err) {
+          fs.appendFile(`../db/${platfrom}.jso`, "", function (err) {
             if (err) throw err;
           });
           console.log(`JSON file for ${platfrom} was created successfully!`);
@@ -30,11 +30,11 @@ const createDatabase = () => {
 const seeder = () => {
   return new Promise((resolve, reject) => {
     PLATFORMS.map(async (platform) => {
-      const data = readData(`./db/${platform}.json`);
+      const data = readData(`../db/${platform}.json`);
       if (data === "empty") {
         const resp = await API(platform.toLowerCase());
 
-        fs.writeFile(`./db/${platform}.json`, resp, function (err) {
+        fs.writeFile(`../db/${platform}.json`, resp, function (err) {
           if (err) {
             console.log(
               `An error occured while seeding JSON Object to ${platform} File.`

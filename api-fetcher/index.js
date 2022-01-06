@@ -1,5 +1,5 @@
 import got from "got";
-import { BUG_BOUNTY_PLATFORMS } from "../constants.js";
+import { BUG_BOUNTY_PLATFORMS } from "../helper/constants.js";
 
 const retry = {
   retry: {

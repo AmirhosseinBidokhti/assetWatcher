@@ -1,4 +1,4 @@
-import { initWatcher } from "./init.js";
+import { initWatcher } from "./helper/init.js";
 import { watchForHackerone } from "./watchers/hackerone.js";
 import { watchForIntigriti } from "./watchers/intigriti.js";
 import { watchForYeswehack } from "./watchers/yeswehack.js";
@@ -25,9 +25,9 @@ const main = async () => {
 //if (arg[0] === "watch") main();
 
 
-cron.schedule("* * * * *", () => {
-  console.log("running a task every minute");
-  main();
-});
+// cron.schedule("* * * * *", () => {
+//   console.log("running a task every minute");
+//   main();
+// });
 
-//main();
+main();

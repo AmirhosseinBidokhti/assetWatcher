@@ -1,5 +1,5 @@
 import { API } from "../api-fetcher/index.js";
-import { readData, saveData, sendToDiscord } from "../utils.js";
+import { readData, saveData, sendToDiscord } from "../helper/utils.js";
 import path from "path";
 const __dirname = path.resolve();
 
