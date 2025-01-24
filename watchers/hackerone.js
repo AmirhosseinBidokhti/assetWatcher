@@ -1,8 +1,13 @@
+import { escape } from "querystring";
 import { API } from "../api-fetcher/index.js";
-import { readData, saveData, sendToDiscord } from "../helper/utils.js";
-
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+import {
+  getFormattedDate,
+  readData,
+  saveData,
+  sendtoTelegram,
+} from "../helper/utils.js";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -25,11 +30,13 @@ export const watchForHackerone = () => {
       );
       //یه برنامه کلا به هکروان اضافه شده
       if (!matchingProgram) {
-        let msg = `New Program called \"${name}\" is on Hackerone!\nAssets:`;
+        let msg = `* ◾️ New Program called "${name}" is on HackerOne * \n\n 🕰️ ${getFormattedDate()}\n\n *${
+          program.url
+        }* \n\n ⬇ Assets:`;
         assets.map(({ asset_identifier }) => {
-          msg += `\n${asset_identifier}`;
+          msg += `\`\`\`\n\n${asset_identifier}\`\`\``;
         });
-        const status = await sendToDiscord(msg);
+        const status = await sendtoTelegram(msg);
 
         if (status == "success") {
           db.push(program);
@@ -41,13 +48,15 @@ export const watchForHackerone = () => {
       }
       // برنامه تا دیروز پول نمیداده بابت این دامین، الان میده
       if (program.offers_bounties && !matchingProgram.offers_bounties) {
-        let msg = `Program ${name} is now willing to pay hackers!\nAssets:`;
+        let msg = `* ◾️ Program ${name} on HackerOne is Paying now 💵 * \n\n 🕰️ ${getFormattedDate()}\n\n *${
+          program.url
+        }* \n\n ⬇ Assets:`;
 
         assets.map(({ asset_identifier }) => {
-          msg += `\n${asset_identifier}`;
+          msg += `\`\`\`\n\n${asset_identifier}\`\`\``;
         });
 
-        const status = await sendToDiscord(msg);
+        const status = await sendtoTelegram(msg);
 
         if (status == "success") {
           matchingProgram.offers_bounties = program.offers_bounties;
@@ -62,16 +71,18 @@ export const watchForHackerone = () => {
           )
       );
       newAssets.push(...results);
-    
+
       if (newAssets.length) {
-        let msg = `New Assets for \"${name}\" on Hackerone!`;
+        let msg = `* ◾️ New Assets for \"${name}\" on HackerOne\*\n\n 🕰️ ${getFormattedDate()}\n\n *${
+          program.url
+        }* \n\n ⬇ New Assets:`;
 
         newAssets.map(({ asset_identifier }) => {
-          msg += `\n${asset_identifier}`;
+          msg += `\`\`\`\n\n${asset_identifier}\`\`\``;
           console.log(`New assets: ${asset_identifier}`);
         });
 
-        const status = await sendToDiscord(msg);
+        const status = await sendtoTelegram(msg);
 
         if (status == "success") {
           matchingProgram.targets.in_scope.push(...newAssets);
@@ -83,8 +94,11 @@ export const watchForHackerone = () => {
         console.log(`Nothing new for ${name}`);
       }
     }
+    // in order to sync the db in case of program removal or stuffs like that maybe re-add the db here
+    console.log("[+] Syncing the DB lastly with a bit pause...");
+    setTimeout(() => {
+      saveData(dbPath, programs);
+    }, 3000);
     resolve();
   });
 };
-
-//watchForHackerone();

@@ -41,15 +41,15 @@ export const API = async (bugBountyPlatform) => {
         console.error(`Error while fetching program: ${error}`);
       }
       break;
-    case "hackenproof":
-      try {
-        console.log("Fetching the data of hackenproof...");
-        const response = await got(BUG_BOUNTY_PLATFORMS.HACKENPROOF, retry);
-        return response.body;
-      } catch (error) {
-        console.error(`Error while fetching program: ${error}`);
-      }
-      break;
+    // case "hackenproof":
+    //   try {
+    //     console.log("Fetching the data of hackenproof...");
+    //     const response = await got(BUG_BOUNTY_PLATFORMS.HACKENPROOF, retry);
+    //     return response.body;
+    //   } catch (error) {
+    //     console.error(`Error while fetching program: ${error}`);
+    //   }
+    //   break;
     case "yeswehack":
       try {
         console.log("Fetching the data of yeswehack...");
@@ -63,7 +63,6 @@ export const API = async (bugBountyPlatform) => {
       try {
         console.log("Fetching the data of federacy...");
         const response = await got(BUG_BOUNTY_PLATFORMS.FEDERACY, retry);
-
         return response.body;
       } catch (error) {
         console.error(`Error while fetching program: ${error}`);

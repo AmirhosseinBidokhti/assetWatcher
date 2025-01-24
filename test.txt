@@ -1,0 +1,1154 @@
+2025/01/05 3:14 PM
+Fetching the data of hackerone...
+heyyyy: <ref *1> PassThrough {
+  _readableState: ReadableState {
+    state: 264470,
+    highWaterMark: 16384,
+    buffer: BufferList { head: null, tail: null, length: 0 },
+    length: 0,
+    pipes: [],
+    flowing: false,
+    errored: null,
+    defaultEncoding: 'utf8',
+    awaitDrainWriters: null,
+    decoder: null,
+    encoding: null,
+    [Symbol(kPaused)]: true
+  },
+  _destroy: [Function: destroy],
+  _events: [Object: null prototype] {
+    prefinish: [Function: prefinish],
+    error: [Function: bound onceWrapper] { listener: [Function (anonymous)] },
+    aborted: [Function: bound onceWrapper] { listener: [Function (anonymous)] },
+    readable: [Function (anonymous)]
+  },
+  _eventsCount: 4,
+  _maxListeners: undefined,
+  _writableState: WritableState {
+    state: 947238,
+    highWaterMark: 16384,
+    defaultEncoding: 'utf8',
+    length: 0,
+    corked: 0,
+    onwrite: [Function: bound onwrite],
+    writecb: null,
+    writelen: 0,
+    afterWriteTickInfo: null,
+    buffered: [],
+    bufferedIndex: 0,
+    pendingcb: 0,
+    errored: null,
+    [Symbol(kOnFinished)]: []
+  },
+  allowHalfOpen: true,
+  socket: [Getter/Setter],
+  httpVersionMajor: [Getter/Setter],
+  httpVersionMinor: [Getter/Setter],
+  httpVersion: [Getter/Setter],
+  complete: [Getter/Setter],
+  rawHeaders: [Getter/Setter],
+  rawTrailers: [Getter/Setter],
+  joinDuplicateHeaders: [Getter/Setter],
+  aborted: [Getter/Setter],
+  upgrade: [Getter/Setter],
+  url: [Getter/Setter],
+  method: [Getter/Setter],
+  statusCode: [Getter/Setter],
+  statusMessage: [Getter/Setter],
+  client: [Getter/Setter],
+  _consuming: [Getter/Setter],
+  _dumped: [Getter/Setter],
+  req: [Getter/Setter],
+  timings: [Getter/Setter],
+  headers: [Getter/Setter],
+  setTimeout: [Getter/Setter],
+  trailers: [Getter/Setter],
+  requestUrl: URL {
+    href: 'https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/refs/heads/main/data/hackerone_data.json',
+    origin: 'https://raw.githubusercontent.com',
+    protocol: 'https:',
+    username: '',
+    password: '',
+    host: 'raw.githubusercontent.com',
+    hostname: 'raw.githubusercontent.com',
+    port: '',
+    pathname: '/arkadiyt/bounty-targets-data/refs/heads/main/data/hackerone_data.json',
+    search: '',
+    searchParams: URLSearchParams {},
+    hash: ''
+  },
+  redirectUrls: [],
+  request: Request {
+    _readableState: ReadableState {
+      state: 288790,
+      highWaterMark: 0,
+      buffer: BufferList { head: null, tail: null, length: 0 },
+      length: 0,
+      pipes: [],
+      flowing: false,
+      errored: null,
+      defaultEncoding: 'utf8',
+      awaitDrainWriters: null,
+      decoder: null,
+      encoding: null,
+      [Symbol(kPaused)]: true
+    },
+    _events: [Object: null prototype] {
+      pipe: [Function (anonymous)],
+      newListener: [Function (anonymous)],
+      response: [Function: eventFunction],
+      error: [Array],
+      retry: [Function],
+      request: [Function: eventFunction],
+      redirect: [Function: eventFunction],
+      uploadProgress: [Function: eventFunction],
+      downloadProgress: [Function: eventFunction],
+      resume: [Function (anonymous)],
+      pause: [Function (anonymous)],
+      close: [Array],
+      end: [Array],
+      finish: [Array]
+    },
+    _eventsCount: 14,
+    _maxListeners: undefined,
+    _writableState: WritableState {
+      state: 947622,
+      highWaterMark: 0,
+      defaultEncoding: 'utf8',
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writecb: null,
+      writelen: 0,
+      afterWriteTickInfo: null,
+      buffered: [],
+      bufferedIndex: 0,
+      pendingcb: 0,
+      errored: null,
+      [Symbol(kOnFinished)]: []
+    },
+    allowHalfOpen: true,
+    constructor: undefined,
+    _noPipe: true,
+    options: {
+      request: undefined,
+      agent: { http: undefined, https: undefined, http2: undefined },
+      h2session: undefined,
+      decompress: true,
+      timeout: {
+        connect: undefined,
+        lookup: undefined,
+        read: undefined,
+        request: undefined,
+        response: undefined,
+        secureConnect: undefined,
+        send: undefined,
+        socket: undefined
+      },
+      prefixUrl: '',
+      body: undefined,
+      form: undefined,
+      json: undefined,
+      cookieJar: undefined,
+      ignoreInvalidCookies: false,
+      searchParams: undefined,
+      dnsLookup: undefined,
+      dnsCache: undefined,
+      context: {},
+      hooks: {
+        init: [],
+        beforeRequest: [],
+        beforeError: [],
+        beforeRedirect: [],
+        beforeRetry: [],
+        afterResponse: []
+      },
+      followRedirect: true,
+      maxRedirects: 10,
+      cache: undefined,
+      throwHttpErrors: true,
+      username: '',
+      password: '',
+      http2: false,
+      allowGetBody: false,
+      headers: {
+        'user-agent': 'got (https://github.com/sindresorhus/got)',
+        'accept-encoding': 'gzip, deflate, br'
+      },
+      methodRewriting: false,
+      dnsLookupIpVersion: undefined,
+      parseJson: [Function: parse],
+      stringifyJson: [Function: stringify],
+      retry: {
+        limit: 3,
+        methods: [ 'GET', 'PUT', 'HEAD', 'DELETE', 'OPTIONS', 'TRACE' ],
+        statusCodes: [
+          408, 413, 429, 500,
+          502, 503, 504, 521,
+          522, 524
+        ],
+        errorCodes: [ 'ETIMEDOUT', 'ECONNREFUSED', 'ENETUNREACH' ],
+        maxRetryAfter: undefined,
+        calculateDelay: [Function: calculateDelay],
+        backoffLimit: Infinity,
+        noise: 100
+      },
+      localAddress: undefined,
+      method: 'GET',
+      createConnection: undefined,
+      cacheOptions: {
+        shared: undefined,
+        cacheHeuristic: undefined,
+        immutableMinTimeToLive: undefined,
+        ignoreCargoCult: undefined
+      },
+      https: {
+        alpnProtocols: undefined,
+        rejectUnauthorized: undefined,
+        checkServerIdentity: undefined,
+        certificateAuthority: undefined,
+        key: undefined,
+        certificate: undefined,
+        passphrase: undefined,
+        pfx: undefined,
+        ciphers: undefined,
+        honorCipherOrder: undefined,
+        minVersion: undefined,
+        maxVersion: undefined,
+        signatureAlgorithms: undefined,
+        tlsSessionLifetime: undefined,
+        dhparam: undefined,
+        ecdhCurve: undefined,
+        certificateRevocationLists: undefined
+      },
+      encoding: undefined,
+      resolveBodyOnly: false,
+      isStream: false,
+      responseType: 'text',
+      url: URL {
+        href: 'https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/refs/heads/main/data/hackerone_data.json',
+        origin: 'https://raw.githubusercontent.com',
+        protocol: 'https:',
+        username: '',
+        password: '',
+        host: 'raw.githubusercontent.com',
+        hostname: 'raw.githubusercontent.com',
+        port: '',
+        pathname: '/arkadiyt/bounty-targets-data/refs/heads/main/data/hackerone_data.json',
+        search: '',
+        searchParams: URLSearchParams {},
+        hash: ''
+      },
+      pagination: {
+        transform: [Function: transform],
+        paginate: [Function: paginate],
+        filter: [Function: filter],
+        shouldContinue: [Function: shouldContinue],
+        countLimit: Infinity,
+        backoff: 0,
+        requestLimit: 10000,
+        stackAllItems: false
+      },
+      setHost: true,
+      maxHeaderSize: undefined,
+      signal: undefined,
+      enableUnixSockets: true
+    },
+    response: [Circular *1],
+    requestUrl: URL {
+      href: 'https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/refs/heads/main/data/hackerone_data.json',
+      origin: 'https://raw.githubusercontent.com',
+      protocol: 'https:',
+      username: '',
+      password: '',
+      host: 'raw.githubusercontent.com',
+      hostname: 'raw.githubusercontent.com',
+      port: '',
+      pathname: '/arkadiyt/bounty-targets-data/refs/heads/main/data/hackerone_data.json',
+      search: '',
+      searchParams: URLSearchParams {},
+      hash: ''
+    },
+    redirectUrls: [],
+    retryCount: 0,
+    _stopRetry: [Function: noop],
+    _downloadedSize: 11701077,
+    _uploadedSize: 0,
+    _stopReading: true,
+    _pipedServerResponses: Set(0) {},
+    _request: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 8,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: true,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: false,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: 0,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: true,
+      socket: [TLSSocket],
+      _header: 'GET /arkadiyt/bounty-targets-data/refs/heads/main/data/hackerone_data.json HTTP/1.1\r\n' +
+        'user-agent: got (https://github.com/sindresorhus/got)\r\n' +
+        'accept-encoding: gzip, deflate, br\r\n' +
+        'Host: raw.githubusercontent.com\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'GET',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/arkadiyt/bounty-targets-data/refs/heads/main/data/hackerone_data.json',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'raw.githubusercontent.com',
+      protocol: 'https:',
+      timings: [Object],
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null,
+      [Symbol(reentry)]: true
+    },
+    _responseSize: 11701077,
+    _bodySize: 0,
+    _unproxyEvents: [Function (anonymous)],
+    _isFromCache: false,
+    _cannotHaveBody: true,
+    _triggerRead: true,
+    _cancelTimeouts: [Function: cancelTimeouts],
+    _removeListeners: [Function: noop],
+    _nativeResponse: IncomingMessage {
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 3,
+      _maxListeners: undefined,
+      socket: null,
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      joinDuplicateHeaders: undefined,
+      aborted: false,
+      upgrade: false,
+      url: 'https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/refs/heads/main/data/hackerone_data.json',
+      method: null,
+      statusCode: 200,
+      statusMessage: 'OK',
+      client: [TLSSocket],
+      _consuming: true,
+      _dumped: false,
+      req: [ClientRequest],
+      timings: [Object],
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 50,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0
+    },
+    _flushed: true,
+    _aborted: false,
+    _requestInitialized: true,
+    _jobs: [],
+    _requestOptions: {
+      shared: undefined,
+      cacheHeuristic: undefined,
+      immutableMinTimeToLive: undefined,
+      ignoreCargoCult: undefined,
+      ALPNProtocols: undefined,
+      ca: undefined,
+      cert: undefined,
+      key: undefined,
+      passphrase: undefined,
+      pfx: undefined,
+      rejectUnauthorized: undefined,
+      checkServerIdentity: [Function: checkServerIdentity],
+      ciphers: undefined,
+      honorCipherOrder: undefined,
+      minVersion: undefined,
+      maxVersion: undefined,
+      sigalgs: undefined,
+      sessionTimeout: undefined,
+      dhparam: undefined,
+      ecdhCurve: undefined,
+      crl: undefined,
+      lookup: undefined,
+      family: undefined,
+      agent: undefined,
+      setHost: true,
+      method: 'GET',
+      maxHeaderSize: undefined,
+      localAddress: undefined,
+      headers: [Object],
+      createConnection: undefined,
+      timeout: undefined,
+      h2session: undefined
+    },
+    flush: [AsyncFunction (anonymous)],
+    [Symbol(kCapture)]: false
+  },
+  isFromCache: false,
+  ip: '185.199.110.133',
+  retryCount: 0,
+  ok: true,
+  rawBody: <Buffer 5b 0a 20 20 7b 0a 20 20 20 20 22 61 6c 6c 6f 77 73 5f 62 6f 75 6e 74 79 5f 73 70 6c 69 74 74 69 6e 67 22 3a 20 74 72 75 65 2c 0a 20 20 20 20 22 61 76 ... 11701027 more bytes>,
+  body: '[\n' +
+    '  {\n' +
+    '    "allows_bounty_splitting": true,\n' +
+    '    "average_time_to_bounty_awarded": null,\n' +
+    '    "average_time_to_first_program_response": null,\n' +
+    '    "average_time_to_report_resolved": null,\n' +
+    '    "handle": "1password_ctf",\n' +
+    '    "id": 0,\n' +
+    '    "managed_program": false,\n' +
+    '    "name": "1Password - CTF",\n' +
+    '    "offers_bounties": true,\n' +
+    '    "offers_swag": false,\n' +
+    '    "response_efficiency_percentage": 100,\n' +
+    '    "submission_state": "open",\n' +
+    '    "url": "https://hackerone.com/1password_ctf",\n' +
+    '    "website": "http://1password.com",\n' +
+    '    "targets": {\n' +
+    '      "in_scope": [\n' +
+    '        {\n' +
+    '          "asset_identifier": "https://bugbounty-ctf.1password.com/",\n' +
+    '          "asset_type": "URL",\n' +
+    '          "availability_requirement": null,\n' +
+    '          "confidentiality_requirement": null,\n' +
+    '          "eligible_for_bounty": true,\n' +
+    '          "eligible_for_submission": true,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": null,\n' +
+    '          "max_severity": "critical"\n' +
+    '        }\n' +
+    '      ],\n' +
+    '      "out_of_scope": [\n' +
+    '        {\n' +
+    '          "asset_identifier": "*.agilebits.com",\n' +
+    '          "asset_type": "WILDCARD",\n' +
+    '          "availability_requirement": null,\n' +
+    '          "confidentiality_requirement": null,\n' +
+    '          "eligible_for_bounty": false,\n' +
+    '          "eligible_for_submission": false,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": null,\n' +
+    '          "max_severity": "none"\n' +
+    '        },\n' +
+    '        {\n' +
+    '          "asset_identifier": "All other domains, subdomains, and 1Password Accounts that are not owned by you, including accounts where you are a user but not the owner, are out of scope.",\n' +
+    '          "asset_type": "OTHER",\n' +
+    '          "availability_requirement": null,\n' +
+    '          "confidentiality_requirement": null,\n' +
+    '          "eligible_for_bounty": false,\n' +
+    '          "eligible_for_submission": false,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": null,\n' +
+    '          "max_severity": "none"\n' +
+    '        },\n' +
+    '        {\n' +
+    '          "asset_identifier": "https://support.1password.com",\n' +
+    '          "asset_type": "URL",\n' +
+    '          "availability_requirement": null,\n' +
+    '          "confidentiality_requirement": null,\n' +
+    '          "eligible_for_bounty": false,\n' +
+    '          "eligible_for_submission": false,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": null,\n' +
+    '          "max_severity": "none"\n' +
+    '        },\n' +
+    '        {\n' +
+    '          "asset_identifier": "https://www.1password.com/",\n' +
+    '          "asset_type": "URL",\n' +
+    '          "availability_requirement": null,\n' +
+    '          "confidentiality_requirement": null,\n' +
+    '          "eligible_for_bounty": false,\n' +
+    '          "eligible_for_submission": false,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": null,\n' +
+    '          "max_severity": "none"\n' +
+    '        }\n' +
+    '      ]\n' +
+    '    }\n' +
+    '  },\n' +
+    '  {\n' +
+    '    "allows_bounty_splitting": true,\n' +
+    '    "average_time_to_bounty_awarded": 22.0,\n' +
+    '    "average_time_to_first_program_response": null,\n' +
+    '    "average_time_to_report_resolved": null,\n' +
+    '    "handle": "1password",\n' +
+    '    "id": 0,\n' +
+    '    "managed_program": false,\n' +
+    '    "name": "1Password - Enterprise Password Manager",\n' +
+    '    "offers_bounties": true,\n' +
+    '    "offers_swag": false,\n' +
+    '    "response_efficiency_percentage": 100,\n' +
+    '    "submission_state": "open",\n' +
+    '    "url": "https://hackerone.com/1password",\n' +
+    '    "website": "https://1password.com",\n' +
+    '    "targets": {\n' +
+    '      "in_scope": [\n' +
+    '        {\n' +
+    '          "asset_identifier": "<Your own 1Password account> —> Latest stable, beta, or nightly Browser Extension (Chrome, Brave, Firefox, Edge, and Safari)",\n' +
+    '          "asset_type": "OTHER",\n' +
+    '          "availability_requirement": null,\n' +
+    '          "confidentiality_requirement": null,\n' +
+    '          "eligible_for_bounty": true,\n' +
+    '          "eligible_for_submission": true,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": null,\n' +
+    '          "max_severity": "critical"\n' +
+    '        },\n' +
+    '        {\n' +
+    '          "asset_identifier": "<Your own 1Password account> —> Latest stable, beta, or nightly Command Line Interface (CLI)",\n' +
+    '          "asset_type": "OTHER",\n' +
+    '          "availability_requirement": null,\n' +
+    '          "confidentiality_requirement": null,\n' +
+    '          "eligible_for_bounty": true,\n' +
+    '          "eligible_for_submission": true,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": null,\n' +
+    '          "max_severity": "critical"\n' +
+    '        },\n' +
+    '        {\n' +
+    '          "asset_identifier": "http://--your-own-1password-account--.1password.com",\n' +
+    '          "asset_type": "URL",\n' +
+    '          "availability_requirement": null,\n' +
+    '          "confidentiality_requirement": null,\n' +
+    '          "eligible_for_bounty": true,\n' +
+    '          "eligible_for_submission": true,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": null,\n' +
+    '          "max_severity": "critical"\n' +
+    '        },\n' +
+    '        {\n' +
+    '          "asset_identifier": "https://events.1password.com/",\n' +
+    '          "asset_type": "API",\n' +
+    '          "availability_requirement": null,\n' +
+    '          "confidentiality_requirement": null,\n' +
+    '          "eligible_for_bounty": true,\n' +
+    '          "eligible_for_submission": true,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": null,\n' +
+    '          "max_severity": "critical"\n' +
+    '        }\n' +
+    '      ],\n' +
+    '      "out_of_scope": [\n' +
+    '        {\n' +
+    '          "asset_identifier": "*.agilebits.com",\n' +
+    '          "asset_type": "WILDCARD",\n' +
+    '          "availability_requirement": null,\n' +
+    '          "confidentiality_requirement": null,\n' +
+    '          "eligible_for_bounty": false,\n' +
+    '          "eligible_for_submission": false,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": null,\n' +
+    '          "max_severity": "none"\n' +
+    '        },\n' +
+    '        {\n' +
+    '          "asset_identifier": "All other domains, subdomains, and 1Password Accounts that are not owned by you, including accounts where you are a user but not the owner, are out of scope.",\n' +
+    '          "asset_type": "OTHER",\n' +
+    '          "availability_requirement": null,\n' +
+    '          "confidentiality_requirement": null,\n' +
+    '          "eligible_for_bounty": false,\n' +
+    '          "eligible_for_submission": false,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": null,\n' +
+    '          "max_severity": "none"\n' +
+    '        },\n' +
+    '        {\n' +
+    '          "asset_identifier": "https://support.1password.com",\n' +
+    '          "asset_type": "URL",\n' +
+    '          "availability_requirement": null,\n' +
+    '          "confidentiality_requirement": null,\n' +
+    '          "eligible_for_bounty": false,\n' +
+    '          "eligible_for_submission": false,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": null,\n' +
+    '          "max_severity": "none"\n' +
+    '        },\n' +
+    '        {\n' +
+    '          "asset_identifier": "https://www.1password.com/",\n' +
+    '          "asset_type": "URL",\n' +
+    '          "availability_requirement": null,\n' +
+    '          "confidentiality_requirement": null,\n' +
+    '          "eligible_for_bounty": false,\n' +
+    '          "eligible_for_submission": false,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": null,\n' +
+    '          "max_severity": "none"\n' +
+    '        }\n' +
+    '      ]\n' +
+    '    }\n' +
+    '  },\n' +
+    '  {\n' +
+    '    "allows_bounty_splitting": true,\n' +
+    '    "average_time_to_bounty_awarded": 0.0,\n' +
+    '    "average_time_to_first_program_response": 43.0,\n' +
+    '    "average_time_to_report_resolved": null,\n' +
+    '    "handle": "bcny",\n' +
+    '    "id": 0,\n' +
+    '    "managed_program": true,\n' +
+    '    "name": "The Browser Company of NYC",\n' +
+    '    "offers_bounties": true,\n' +
+    '    "offers_swag": false,\n' +
+    '    "response_efficiency_percentage": 96,\n' +
+    '    "submission_state": "open",\n' +
+    '    "url": "https://hackerone.com/bcny",\n' +
+    '    "website": "http://thebrowser.company",\n' +
+    '    "targets": {\n' +
+    '      "in_scope": [\n' +
+    '        {\n' +
+    '          "asset_identifier": "Arc on Mac",\n' +
+    '          "asset_type": "DOWNLOADABLE_EXECUTABLES",\n' +
+    '          "availability_requirement": "low",\n' +
+    '          "confidentiality_requirement": "high",\n' +
+    '          "eligible_for_bounty": true,\n' +
+    '          "eligible_for_submission": true,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": "medium",\n' +
+    '          "max_severity": "critical"\n' +
+    '        },\n' +
+    '        {\n' +
+    '          "asset_identifier": "Arc on Window",\n' +
+    '          "asset_type": "DOWNLOADABLE_EXECUTABLES",\n' +
+    '          "availability_requirement": "low",\n' +
+    '          "confidentiality_requirement": "high",\n' +
+    '          "eligible_for_bounty": true,\n' +
+    '          "eligible_for_submission": true,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": "medium",\n' +
+    '          "max_severity": "critical"\n' +
+    '        },\n' +
+    '        {\n' +
+    '          "asset_identifier": "arc.net",\n' +
+    '          "asset_type": "URL",\n' +
+    '          "availability_requirement": "low",\n' +
+    '          "confidentiality_requirement": "medium",\n' +
+    '          "eligible_for_bounty": true,\n' +
+    '          "eligible_for_submission": true,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": "high",\n' +
+    '          "max_severity": "critical"\n' +
+    '        },\n' +
+    '        {\n' +
+    '          "asset_identifier": "bcny.com",\n' +
+    '          "asset_type": "URL",\n' +
+    '          "availability_requirement": "none",\n' +
+    '          "confidentiality_requirement": "low",\n' +
+    '          "eligible_for_bounty": true,\n' +
+    '          "eligible_for_submission": true,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": "low",\n' +
+    '          "max_severity": "critical"\n' +
+    '        },\n' +
+    '        {\n' +
+    '          "asset_identifier": "company.thebrowser.arc",\n' +
+    '          "asset_type": "GOOGLE_PLAY_APP_ID",\n' +
+    '          "availability_requirement": "low",\n' +
+    '          "confidentiality_requirement": "medium",\n' +
+    '          "eligible_for_bounty": true,\n' +
+    '          "eligible_for_submission": true,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": "low",\n' +
+    '          "max_severity": "critical"\n' +
+    '        },\n' +
+    '        {\n' +
+    '          "asset_identifier": "id6472513080",\n' +
+    '          "asset_type": "APPLE_STORE_APP_ID",\n' +
+    '          "availability_requirement": "low",\n' +
+    '          "confidentiality_requirement": "medium",\n' +
+    '          "eligible_for_bounty": true,\n' +
+    '          "eligible_for_submission": true,\n' +
+    '          "instruction": null,\n' +
+    '          "integrity_requirement": "medium",\n' +
+    '          "max_severity": "critical"\n' +
+    '        },\n' +
+    '        {\n' +
+    '          "asset_identifier": "thebrowser.company",\n' +
+    '          "asset_type": "URL",\n' +
+    '          "availability_requirement": "low",\n' +
+    '          "confidentiality_requirement": "low",\n' +
+    '          "eligible_for_bounty": true,\n' +
+    '          "eligible_for_submission": true,\n' +
+    '          "instruction": '... 11690460 more characters,
+  [Symbol(kCapture)]: false,
+  [Symbol(kCallback)]: null
+}
+Nothing new for 1Password - CTF
+Nothing new for 1Password - Enterprise Password Manager
+Nothing new for The Browser Company of NYC
+Nothing new for Verily Life Sciences
+Nothing new for Starbucks Europe, and Middle East and Africa
+Nothing new for Starbucks China
+Nothing new for PepsiCo VDP
+Nothing new for is*hosting
+Nothing new for AWS VDP
+Nothing new for NBA Public Bug Bounty
+Nothing new for Itaú Unibanco
+Nothing new for Supabase
+Nothing new for Finnair Vulnerability Disclosure
+Nothing new for Liverpool Victoria
+Nothing new for 6sense VDP
+Nothing new for Mintel
+Nothing new for Circle BBP
+Nothing new for LPL Financial VDP
+Nothing new for Peloton
+Nothing new for Varonis
+Nothing new for Anthropic (VDP)
+Nothing new for ION Group
+Nothing new for Klarna
+Nothing new for Nimiq
+Nothing new for TomTom
+Nothing new for TimelyCare
+Nothing new for Lowe's Companies VDP
+Nothing new for REI VDP
+Nothing new for Chia Network
+Nothing new for 3CX
+Nothing new for Alchemy Insights, Inc.
+Nothing new for Inter & Co. VDP
+Nothing new for Banco BMG VDP
+Nothing new for Netflix
+Nothing new for TransUnion LLC
+Nothing new for WellHive
+Nothing new for 23andMe Bug Bounty
+Nothing new for Aeromexico VDP
+Nothing new for Temu
+Nothing new for Bybit Fintech Ltd
+Nothing new for Trip.com
+Nothing new for MacTaggart Scott
+Nothing new for Bykea
+Nothing new for Inditex
+Nothing new for Aon
+Nothing new for Leather Wallet
+Nothing new for Xverse
+Nothing new for OakNorth Bank
+Nothing new for Blue Apron (Wonder Group) VDP
+Nothing new for Fireblocks MPC
+Nothing new for Greenfly
+Nothing new for Aven (Response)
+Nothing new for Ivanti (VDP)
+Nothing new for Restaurant Brands International (RBI) VDP
+Nothing new for Ionity GmbH
+Nothing new for Visa
+Nothing new for Brightspeed
+Nothing new for NBA
+Nothing new for AboitizPower
+Nothing new for Tools for Humanity
+Nothing new for Alshaya
+Nothing new for NiceHash
+Nothing new for Eurofins
+Nothing new for Ring
+Nothing new for Truist Financial
+Nothing new for SIX Group
+Nothing new for eufy Security
+Nothing new for eero
+Nothing new for Fertitta Entertainment
+Nothing new for Mozilla
+Nothing new for Redox
+Nothing new for OKG
+Nothing new for Egress Software Technologies
+Nothing new for Prolinx VDP
+Nothing new for WisdomTree, Inc.
+Nothing new for Kahootz
+Nothing new for PornBox
+Nothing new for TRON DAO
+Nothing new for Superbet
+Nothing new for ABN AMRO Bank VDP
+Nothing new for Magic Eden
+Nothing new for Kolesa Group
+Nothing new for Prudential Financial
+Nothing new for Boozt Fashion AB
+Nothing new for ONE ZERO VDP
+Nothing new for U.S. Department of State
+Nothing new for Sheer
+Nothing new for Vodafone Oman
+Nothing new for Frontegg
+Nothing new for KKR-VDP
+Nothing new for Fifth Third Bank VDP
+Nothing new for inDrive
+Nothing new for ZeroBounce
+Nothing new for Amazon Vulnerability Research Program - Devices
+Nothing new for REI BBP
+Nothing new for Mergify
+Nothing new for Zabbix
+Nothing new for Coinhako
+Nothing new for Arkose Labs
+Nothing new for ProductBoard, Inc.
+Nothing new for ABB Information Systems Ltd
+Nothing new for Avalara
+Nothing new for ALSCO
+Nothing new for Abercrombie & Fitch Management Co.
+Nothing new for City of Los Angeles
+Nothing new for Dynamic Labs
+Nothing new for ResMed
+Nothing new for Yuga Labs
+Nothing new for Modern Treasury
+Nothing new for Daimler Truck
+Nothing new for Canada Goose Inc.
+Nothing new for Fireblocks
+Nothing new for Monarch Money
+Nothing new for Delivery Hero
+Nothing new for Clarivate
+Nothing new for Render
+Nothing new for MetaMask
+Nothing new for Skinport
+Nothing new for FloQast
+Nothing new for Callsign
+Nothing new for Palantir Public
+Nothing new for Ro
+Nothing new for Windstream
+Nothing new for MongoDB
+Nothing new for Deribit
+Nothing new for Fidelity
+Nothing new for Sorare
+Nothing new for Fresenius
+Nothing new for The Walt Disney Company
+Nothing new for Alohi
+Nothing new for Hilton
+Nothing new for Gymshark
+Nothing new for Moov
+Nothing new for StrongDM
+Nothing new for Compass
+Nothing new for SideFX
+Nothing new for Wells Fargo Bounty
+Nothing new for Allegion
+Nothing new for Wickr
+Nothing new for PagerDuty
+Nothing new for OANDA
+Nothing new for Payoneer
+Nothing new for Tesco
+Nothing new for Planet Labs
+Nothing new for MoonPay 
+Nothing new for Divvy Homes
+Nothing new for KOHO
+Nothing new for Veeam
+Nothing new for Redis 
+Nothing new for GoDaddy VDP
+Nothing new for Mondelēz International
+Nothing new for Capital One Bug Bounty
+Nothing new for APNIC
+Nothing new for Blend Labs
+Nothing new for Razorpay
+Nothing new for Internet Bug Bounty
+Nothing new for Hy-Vee
+Nothing new for GSA Bounty
+Nothing new for Tenable
+Nothing new for Snowplow
+Nothing new for SEGA
+Nothing new for Newegg
+Nothing new for Octopus Energy Group
+Nothing new for Fastly VDP
+Nothing new for Keurig Dr Pepper
+Nothing new for ServiceNow Disclosure
+Nothing new for Particle Health VDP
+Nothing new for Krisp
+Nothing new for Hedera Hashgraph
+Nothing new for LATAM Airlines
+Nothing new for KHealth
+Nothing new for SMTP2GO BBP
+Nothing new for JetBlue
+Nothing new for Nominet
+Nothing new for Zebra VDP
+Nothing new for UPS VDP
+Nothing new for Playtika
+Nothing new for Beiersdorf
+Nothing new for John Deere
+Nothing new for Tide
+Nothing new for Trendyol
+Nothing new for Fastify
+Nothing new for M&T Bank Vulnerability Disclosure
+Nothing new for DIB-VDP
+Nothing new for Recorded Future
+Nothing new for LumiraDx
+Nothing new for BlackRock
+Nothing new for Clubhouse
+Nothing new for Tennessee Valley Authority
+Nothing new for Costco
+Nothing new for Consensys
+Nothing new for On 
+Nothing new for HYPR
+Nothing new for Mars
+Nothing new for WHO COVID-19 Mobile App
+Nothing new for Stripe
+Nothing new for Pfizer
+Nothing new for eMoney Advisor
+Nothing new for Paystack Vulnerability Disclosure
+Nothing new for Freshworks 
+Nothing new for Judge.me 
+Nothing new for R3
+Nothing new for CBRE
+Nothing new for Doppler
+Nothing new for Grindr
+Nothing new for Cloud Software Group
+Nothing new for XVIDEOS
+Nothing new for Anywhere Real Estate
+Nothing new for U.S. General Services Administration
+Nothing new for Ohio Secretary of State
+Nothing new for OpenMage
+Nothing new for International Airlines Group
+Nothing new for 8x8 Bounty
+Nothing new for A.S. Watson Group 
+Nothing new for TikTok
+Nothing new for  Esteé  Lauder
+Nothing new for Miro
+Nothing new for AIG
+Nothing new for FINRA Response
+Nothing new for Rebellion Defense
+Nothing new for Chime
+Nothing new for LaunchDarkly
+Nothing new for Polygon Technology
+Nothing new for SKALE Network
+Nothing new for Cognizant
+Nothing new for Vendasta
+Nothing new for Insightly
+Nothing new for Figma
+Nothing new for Mendix
+Nothing new for Amazon Vulnerability Research Program
+Nothing new for CS Money
+Nothing new for Cedars-Sinai
+Nothing new for N45HT
+Nothing new for hostinger 
+Nothing new for Shutterfly VDP
+Nothing new for USPS - United States Postal Service
+Nothing new for SHEIN
+Nothing new for Navient Solutions LLC
+Nothing new for Staging.every.org
+Nothing new for TD Bank Group
+Nothing new for Cirrus Insight
+Nothing new for Flexport VDP
+Nothing new for Thnks
+Nothing new for Myndr
+Nothing new for Faraday, Inc.
+Nothing new for PlayStation
+Nothing new for Truecaller 
+Nothing new for Insulet Corporation
+Nothing new for InvestNext
+Nothing new for Simple Poll
+Nothing new for PUBG
+Nothing new for GitHub Security Lab
+Nothing new for Picsart
+Nothing new for Evernote
+Nothing new for FileZilla
+Nothing new for Clario
+Nothing new for HCL Software Inc.
+Nothing new for Stripo Inc
+Nothing new for lemlist
+Nothing new for Exodus
+Nothing new for KeyBank
+Nothing new for Lab45
+Nothing new for Gmelius
+Nothing new for Thomson Reuters
+Nothing new for Palo Alto Software
+Nothing new for Overloop
+Nothing new for JNJ Mobile
+Nothing new for MTN Group
+Nothing new for Kubernetes
+Nothing new for CoinSpot
+Nothing new for GoCardless Bug Bounty Program
+Nothing new for Equifax-vdp
+Nothing new for ForeScout Technologies
+Nothing new for LY Corporation
+Nothing new for AT&T
+Nothing new for Lark Technologies
+Nothing new for Top Echelon Software
+Nothing new for Solidus
+Nothing new for DataStax
+Nothing new for Worklytics
+Nothing new for DefectDojo
+Nothing new for Trellix
+Nothing new for curl
+Nothing new for Dynatrace
+Nothing new for Via
+Nothing new for Xiaomi
+Nothing new for Coda
+Nothing new for Starling Bank Limited
+Nothing new for Central Security Project
+Nothing new for Capital One
+Nothing new for Reddit
+Nothing new for Merck & Co., Inc., Rahway, NJ, USA
+Nothing new for Early Warning
+Nothing new for Instacart
+Nothing new for phpBB
+Nothing new for Ford
+Nothing new for Magic
+Nothing new for Expedia Group Bug Bounty
+Nothing new for Front
+Nothing new for eToro BBP
+Nothing new for Python Cryptographic Authority
+Nothing new for Netlify
+Nothing new for FanDuel
+Nothing new for Credit Karma
+Nothing new for MercadoLibre
+Nothing new for Urban Company
+Nothing new for Remitly
+Nothing new for Expedia Group
+Nothing new for Nutanix
+Nothing new for S-Pankki
+Nothing new for Flickr
+Nothing new for Matomo
+Nothing new for NISC-VDP
+Nothing new for Logitech
+Nothing new for Marriott Bug Bounty Program
+Nothing new for Hyatt Hotels
+Nothing new for Acronis
+Nothing new for Chainlink
+Nothing new for PayPal
+Nothing new for MariaDB
+Nothing new for Chaturbate
+Nothing new for pixiv
+Nothing new for IBM
+Nothing new for arkadiyt-projects
+Nothing new for Cosmos
+Nothing new for DuckDuckGo
+Nothing new for Affirm
+Nothing new for RATELIMITED
+Nothing new for Crypto.com
+Nothing new for GoodRx
+Nothing new for Loofah
+Nothing new for Node.js
+Nothing new for Nokogiri
+Nothing new for Ping Identity
+Nothing new for Flutter UK&I
+Nothing new for Toyota
+Nothing new for Rootstock Labs
+Nothing new for BitMEX
+Nothing new for passhash
+Nothing new for Crowdstrike
+Nothing new for Databricks
+Nothing new for Coalition, Inc.
+Nothing new for Elastic
+Nothing new for Goldman Sachs
+Nothing new for Smule
+Nothing new for Ed
+Nothing new for Yoti
+Nothing new for Valve
+Nothing new for Epic Games
+Nothing new for Sony
+Nothing new for Malwarebytes
+Nothing new for Grammarly
+Nothing new for Hyperledger
+Nothing new for Monero
+Nothing new for UserTesting
+Nothing new for Bitwarden
+Nothing new for Oportun
+Nothing new for WakaTime
+Nothing new for Bumble
+Nothing new for Spotify
+Nothing new for Roblox
+Nothing new for Stellar.org
+Nothing new for Dyson
+Nothing new for Weblate
+Nothing new for Shipt
+Nothing new for Disclosure Assistance
+Nothing new for Nord Security
+Nothing new for Lyst
+Nothing new for Kiwi.com
+Nothing new for Discourse
+Nothing new for Enjin
+Nothing new for Nintendo
+Nothing new for U.S. Dept Of Defense
+Nothing new for Plaid
+Nothing new for Semrush
+Nothing new for Quora
+Nothing new for Brave Software
+Nothing new for PortSwigger Web Security
+Nothing new for RubyGems
+Nothing new for Files.com
+Nothing new for OWOX, Inc.
+Nothing new for Hiro
+Nothing new for EXNESS
+Nothing new for Scopely
+Nothing new for Localize
+Nothing new for WordPress
+Nothing new for Aspen
+Nothing new for GoCD
+Nothing new for Nextcloud
+Nothing new for Publitas
+Nothing new for Starbucks
+Nothing new for Ruby
+Nothing new for Rockstar Games
+Nothing new for GitHub
+Nothing new for Wealthsimple
+Nothing new for MainWP
+Nothing new for Zomato
+Nothing new for General Motors
+Nothing new for Tor
+Nothing new for Deriv.com
+Nothing new for Glassdoor
+Nothing new for Tinder
+Nothing new for FetLife
+Nothing new for Version Cake
+Nothing new for Grab
+Nothing new for CERT/CC
+Nothing new for Revive Adserver
+Nothing new for Moneybird
+Nothing new for Dashlane
+Nothing new for Coursera
+Nothing new for Udemy
+Nothing new for Zendesk
+Nothing new for KAYAK
+Nothing new for Basecamp
+Nothing new for Shopify
+Nothing new for Mapbox
+Nothing new for Invision Power Services, Inc.
+Nothing new for Airbnb
+Nothing new for Booking.com
+Nothing new for Airtable
+Nothing new for Adobe
+Nothing new for FormAssembly
+Nothing new for Blockchain
+Nothing new for Ubiquiti Inc.
+Nothing new for Snapchat
+Nothing new for Priceline
+Nothing new for Uber
+Nothing new for Yelp
+Nothing new for Informatica
+Nothing new for Vimeo
+Nothing new for LinkedIn
+Nothing new for Greenhouse.io
+Nothing new for ExpressionEngine
+Nothing new for GitLab
+Nothing new for X (Formerly Twitter)
+Nothing new for Ian Dunn
+Nothing new for Cloudflare Public Bug Bounty
+Nothing new for Automattic
+Nothing new for IRCCloud
+Nothing new for Khan Academy
+Nothing new for Coinbase
+Nothing new for Concrete CMS
+Nothing new for Slack
+Nothing new for Phabricator
+Nothing new for Ruby on Rails
+Nothing new for Django
+Nothing new for HackerOne
