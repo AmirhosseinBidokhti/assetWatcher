@@ -22,8 +22,6 @@ export const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK || "";
 export const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || "";
 export const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || "";
 
-let someHidden = "testing gittttt";
-
 export {
   BUG_BOUNTY_PLATFORMS,
   DISCORD_WEBHOOK,
