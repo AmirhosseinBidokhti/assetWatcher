@@ -18,9 +18,9 @@ const BUG_BOUNTY_PLATFORMS = {
   //   "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/refs/heads/main/data/federacy_data.json",
 };
 
-export const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK || "";
-export const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || "";
-export const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || "";
+const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK || "";
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || "";
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || "";
 
 export {
   BUG_BOUNTY_PLATFORMS,
